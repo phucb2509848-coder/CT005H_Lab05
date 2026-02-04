@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công Nghệ Số Trong Giáo Dục | Lab 5</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 50px 30px;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 60px;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        section h2 {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        /* Infographic Section */
+        .infographic-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 40px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .infographic-wrapper:hover {
+            transform: scale(1.02);
+        }
+
+        .infographic-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+            transition: filter 0.3s ease;
+        }
+
+        .infographic-wrapper img:hover {
+            filter: brightness(1.05);
+        }
+
+        /* Video Section */
+        .video-wrapper {
+            position: relative;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .video-wrapper::before {
+            content: '';
+            display: block;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 40px 20px;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            section {
+                margin-bottom: 40px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.95em;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .footer-links {
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        section:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 Công Nghệ Số Trong Giáo Dục</h1>
+            <p>Infographic và Video Hướng Dẫn Học Tập Hiệu Quả</p>
+        </header>
+
+        <div class="content">
+            <!-- Section Infographic -->
+            <section>
+                <h2>📊 Infographic</h2>
+                <div class="infographic-wrapper">
+                    <!-- Thay "Lab05_Ex2.1.png" bằng đường dẫn file infographic của bạn -->
+                    <img src="Lab05_Ex2.1.png" alt="Infographic - Công Nghệ Số Trong Giáo Dục" 
+                         title="Click để xem chi tiết">
+                </div>
+                <p style="text-align: center; color: #666; margin-top: 15px; font-size: 0.95em;">
+                    Hình ảnh minh họa chi tiết về ứng dụng công nghệ số trong lĩnh vực giáo dục
+                </p>
+            </section>
+
+            <!-- Section Video YouTube -->
+            <section>
+                <h2>🎬 Video Giới Thiệu</h2>
+                <div class="video-wrapper">
+                    <!-- Thay link video YouTube bên dưới bằng link của bạn -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VdDqwNYv9_4?si=8gkYzVP93auPGGnb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p style="text-align: center; color: #666; margin-top: 15px; font-size: 0.95em;">
+                    Video hướng dẫn chi tiết và tương tác về chủ đề này
+                </p>
+            </section>
+        </div>
+
+        <footer>
+            <p><strong>© 2026 Lab 5 - Nền Tảng Công Nghệ Số</strong></p>
+            <p>Được thực hiện với sự hỗ trợ của GitHub Copilot</p>
+        </footer>
+    </div>
+</body>
+</html>
